@@ -2,10 +2,12 @@ import products.FractionalProduct;
 import products.GenericProduct;
 import products.LiquidProduct;
 import products.Product;
+import products.utils.ProductComparators;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class Supermarket {
 
@@ -17,6 +19,9 @@ public class Supermarket {
             .forEach(System.out::println);
 
         System.out.println("--------");
+
+        System.out.println("Producto mas caro: " + mostExpensiveProduct().map(Product::getName).orElse(" - "));
+        System.out.println("Producto mas barato: " + cheapestProduct().map(Product::getName).orElse(" - "));
     }
 
     private static List<Product> availableProducts(){
@@ -30,5 +35,13 @@ public class Supermarket {
         }
 
         return products;
+    }
+
+    private static Optional<Product> mostExpensiveProduct(){
+        return availableProducts().stream().max(ProductComparators::byPrice);
+    }
+
+    private static Optional<Product> cheapestProduct(){
+        return availableProducts().stream().min(ProductComparators::byPrice);
     }
 }

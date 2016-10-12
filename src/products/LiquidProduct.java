@@ -19,7 +19,7 @@ public class LiquidProduct extends Product {
 
     public String toString(){
         StringBuilder str = new StringBuilder();
-        str.append(showName()).append(showLiters()).append(showPrice());
+        str.append(showName()).append(" /// ").append(showLiters()).append(" /// ").append(showPrice());
 
         return str.toString();
     }

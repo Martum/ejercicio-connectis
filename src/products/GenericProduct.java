@@ -19,7 +19,7 @@ public class GenericProduct extends Product {
 
     public String toString(){
         StringBuilder str = new StringBuilder();
-        str.append(showName()).append(showContent()).append(showPrice());
+        str.append(showName()).append(" /// ").append(showContent()).append(" /// ").append(showPrice());
 
         return str.toString();
     }

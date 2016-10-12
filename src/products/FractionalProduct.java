@@ -16,7 +16,7 @@ public class FractionalProduct extends Product {
 
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append(showName()).append(showPrice()).append(showUnit());
+        str.append(showName()).append(" /// ").append(showPrice()).append(" /// ").append(showUnit());
 
         return str.toString();
     }

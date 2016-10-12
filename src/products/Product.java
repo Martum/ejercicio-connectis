@@ -35,6 +35,6 @@ public abstract class Product {
     }
 
     protected String showPrice(){
-        return "Precio: " + getPrice();
+        return "Precio: $" + getPrice();
     }
 }
